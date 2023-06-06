@@ -6,7 +6,7 @@ const model3 = await tf.loadLayersModel('model3/model.json');
 // Preprocess and predict image
 async function predict_image(image) {
   const processedImage = preprocess(image);
-  
+  ``
   const prediction1 = model1.predict(processedImage);
   const prediction2 = model2.predict(processedImage);
   const prediction3 = model3.predict(processedImage);
