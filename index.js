@@ -1,7 +1,8 @@
+
 // Load the models
-const model1 = await tf.loadLayersModel('model1/model.json');
-const model2 = await tf.loadLayersModel('model2/model.json');
-const model3 = await tf.loadLayersModel('model3/model.json');
+const model1 = await tf.loadLayersModel('./model.json');
+const model2 = await tf.loadLayersModel('./model.json');
+const model3 = await tf.loadLayersModel('./model.json');
 
 // Preprocess and predict image
 async function predict_image(image) {
@@ -26,7 +27,7 @@ function preprocess(image) {
 }
 
 // Example usage
-const image = loadImage('path/to/image.jpg'); // Load your image here
+const image = loadImage('./dataset/bacterial_dermatosis/dog210612_03_01_13_pic0.jpg'); // Load your image here
 predict_image(image).then((results) => {
   console.log(results); // Output the prediction results
 });

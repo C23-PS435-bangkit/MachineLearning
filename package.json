@@ -1,0 +1,22 @@
+{
+  "name": "tensorflow",
+  "version": "1.0.0",
+  "description": "tets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C23-PS435-bangkit/MachineLearning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C23-PS435-bangkit/MachineLearning/issues"
+  },
+  "homepage": "https://github.com/C23-PS435-bangkit/MachineLearning#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.6.0"
+  }
+}
