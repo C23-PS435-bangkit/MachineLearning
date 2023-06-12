@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/C23-PS435-bangkit/MachineLearning#readme",
   "dependencies": {
-    "@tensorflow/tfjs": "^4.6.0"
+    "@tensorflow/tfjs": "^4.7.0"
   }
 }

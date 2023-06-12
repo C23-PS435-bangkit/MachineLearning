@@ -3,9 +3,9 @@ const tf = require('@tensorflow/tfjs');
 // Wrap the code in an asynchronous function
 async function main() {
     // Load the models
-    const model1 = await tf.loadLayersModel('./model.json');
-    const model2 = await tf.loadLayersModel('./model.json');
-    const model3 = await tf.loadLayersModel('./model.json');
+    const model1 = await tf.loadLayersModel('./model-exports/model.json');
+    const model2 = await tf.loadLayersModel('./model-exports/model.json');
+    const model3 = await tf.loadLayersModel('./model-exports/model.json');
   
     // Preprocess and predict image
     async function predict_image(image) {
@@ -30,7 +30,7 @@ async function main() {
     }
   
     // Example usage
-    const image = loadImage('./dataset/bacterial_dermatosis/dog210612_03_01_13_pic0.jpg'); // Load your image here
+    const image = loadImage('./dataset/bacterial_dermatosis/dog210612_03_01_13_pic3.jpg'); // Load your image here
     predict_image(image).then((results) => {
       console.log(results); // Output the prediction results
     });
