@@ -1,3 +1,6 @@
 # Ignore node_modules folder
-node_modules/
+using_tfjs/node_modules
+Dog Disease Photos/
+dataset/
+using_flask/capstone
 # Bisa di-run pakai 'npm install' dulu misal butuh modulnya baru dijalankan - selama ada package.json aman kok :3
