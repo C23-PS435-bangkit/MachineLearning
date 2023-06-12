@@ -2,4 +2,5 @@ Bisa di-run pakai 'npm install' dulu misal butuh modulnya baru dijalankan - sela
 <br>
 Ini aku remove dulu biar bisa aku test dulu, makasiiii  
   
-Ini aku coba pake flask. Udah bisa jalan API nya di local. Tinggal benerin output sama modelnya.
+Ini aku coba pake flask. Udah bisa jalan API nya di local. Tinggal benerin output sama modelnya.  
+-- nopal
