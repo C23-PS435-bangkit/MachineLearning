@@ -29,9 +29,9 @@ def predict_image(image_path):
     prediction4 = model_healthy.predict(image)[0][0]
 
     # Round the predictions and convert to binary status
-    status1 = int(round(prediction1))
     status2 = int(round(prediction2))
     status3 = int(round(prediction3))
+    status1 = int(round(prediction1))
     status4 = int(round(prediction4))
 
     # Format the predictions as a dictionary
@@ -42,7 +42,39 @@ def predict_image(image_path):
         'model_healthy': {'prediction': float(prediction4), 'status': status4}
     }
 
+    # results = {
+    #     'model_allergic': {'prediction': float(prediction1), 'status': 1},
+    #     'model_bacterial': {'prediction': float(prediction2), 'status': 0},
+    #     'model_fungal': {'prediction': float(prediction3), 'status': 0},
+    #     'model_healthy': {'prediction': float(prediction4), 'status': 0}
+    # }
+
+    if results['model_allergic']['status'] == 1 and results['model_bacterial']['status'] == 1 and results['model_fungal']['status'] == 1:
+        diagnose = {
+            'diagnose': 'isEmergency',
+            'treatment': "URGENT. Please bring your pet to nearest vetenarian as soon as possible!"
+            }
+    elif results['model_allergic']['status'] == 1:
+        diagnose = {
+            'diagnose' : 'isAllergic',
+            'treatment' : 'Depend on the allergy, the treatment might be different. please observe your pet allergic cause and provide healthy diet while also cleanse them with hypoallergenic shampoo. If the allergi keep getting worse please seek nearest vetenarian'
+        }
+    elif results['model_bacterial']['status'] == 1:
+        diagnose = {
+            'diagnose' : 'isBacterial',
+            'treatment' : 'Please tend your beloved pet with medicated shampoos'
+        }
+    elif results['model_fungal']['status'] == 1:
+        diagnose = {
+            'diagnose': 'isFungal',
+            'treatment' : 'Depending on fungal type, the treatment might be slightly different. For general treatment, please give your pet a antifungal shampoo and avoid letting your pet scratch the affected area'
+        }
+    elif results['model_allergic']['status'] == 0 and results['model_bacterial']['status'] == 0 and results['model_fungal']['status'] == 0:
+        diagnose = {
+            'diagnose': 'isHealthy',
+            'treatment': "Goodjob"
+            }
     # Convert the dictionary to JSON format
-    json_results = json.dumps(results)
+    json_results = diagnose
 
     return json_results
