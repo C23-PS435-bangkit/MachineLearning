@@ -51,28 +51,28 @@ def predict_image(image_path):
 
     if results['model_allergic']['status'] == 1 and results['model_bacterial']['status'] == 1 and results['model_fungal']['status'] == 1:
         diagnose = {
-            'diagnose': 'isEmergency',
+            'diagnose': 'Emergency',
             'treatment': "URGENT. Please bring your pet to nearest vetenarian as soon as possible!"
             }
     elif results['model_allergic']['status'] == 1:
         diagnose = {
-            'diagnose' : 'isAllergic',
+            'diagnose' : 'Allergic',
             'treatment' : 'Depend on the allergy, the treatment might be different. please observe your pet allergic cause and provide healthy diet while also cleanse them with hypoallergenic shampoo. If the allergi keep getting worse please seek nearest vetenarian'
         }
     elif results['model_bacterial']['status'] == 1:
         diagnose = {
-            'diagnose' : 'isBacterial',
+            'diagnose' : 'Bacterial',
             'treatment' : 'Please tend your beloved pet with medicated shampoos'
         }
     elif results['model_fungal']['status'] == 1:
         diagnose = {
-            'diagnose': 'isFungal',
+            'diagnose': 'Fungal',
             'treatment' : 'Depending on fungal type, the treatment might be slightly different. For general treatment, please give your pet a antifungal shampoo and avoid letting your pet scratch the affected area'
         }
     elif results['model_allergic']['status'] == 0 and results['model_bacterial']['status'] == 0 and results['model_fungal']['status'] == 0:
         diagnose = {
-            'diagnose': 'isHealthy',
-            'treatment': "Goodjob"
+            'diagnose': 'Healthy',
+            'treatment': "Your pet is in good health. It is important to maintain your pet's healthy lifestyle by providing them a balanced diet, regular exercise, and keeping them up-to-date with vaccinations and preventive care. Regular check-ups with a veterinarian can help ensure that your pet stays healthy and can catch any potential issues early. Keep up the good work and continue to provide your pet with the love and care they deserve!"
             }
     # Convert the dictionary to JSON format
     json_results = diagnose
