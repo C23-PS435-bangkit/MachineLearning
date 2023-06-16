@@ -69,11 +69,16 @@ def predict_image(image_path):
             'diagnose': 'Fungal',
             'treatment' : 'Depending on fungal type, the treatment might be slightly different. For general treatment, please give your pet a antifungal shampoo and avoid letting your pet scratch the affected area'
         }
-    elif results['model_allergic']['status'] == 0 and results['model_bacterial']['status'] == 0 and results['model_fungal']['status'] == 0:
+    elif results['model_healthy']['status'] == 1 and results['model_bacterial']['status'] == 0 and results['model_fungal']['status'] == 0:
         diagnose = {
             'diagnose': 'Healthy',
             'treatment': "Your pet is in good health. It is important to maintain your pet's healthy lifestyle by providing them a balanced diet, regular exercise, and keeping them up-to-date with vaccinations and preventive care. Regular check-ups with a veterinarian can help ensure that your pet stays healthy and can catch any potential issues early. Keep up the good work and continue to provide your pet with the love and care they deserve!"
-            }
+        }
+    else:
+        diagnose = {
+            'diagnose': 'Unidentified',
+            'treatment': "We are unable to identified the disease. Please try again :("
+        }
     # Convert the dictionary to JSON format
     json_results = diagnose
 
