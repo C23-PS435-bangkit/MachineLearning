@@ -1,5 +1,5 @@
 runtime: python39
-service: api
+service: purrfect-aid-model
 entrypoint: gunicorn wsgi:application
 
 instance_class: F4

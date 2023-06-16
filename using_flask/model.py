@@ -2,6 +2,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image
 import json
+from io import BytesIO
 
 # Load the models
 model_allergic = load_model('models/allergic vs non allergic/my_model.h5')
@@ -10,8 +11,7 @@ model_fungal = load_model('models/fungal vs non fungal/my_model.h5')
 model_healthy = load_model('models/healthy vs non healthy/model_healthy.h5')
 
 # Function to preprocess the image
-def load_and_preprocess_image(image_path):
-    image = Image.open(image_path)
+def load_and_preprocess_image(image):
     image = image.resize((128, 128))
     image = np.expand_dims(image, axis=0)
     image = image / 255.0  # Normalize the image
