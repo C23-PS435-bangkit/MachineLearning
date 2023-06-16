@@ -48,7 +48,7 @@ This repository provides a Flask application for testing a machine learning mode
 9. When finished, press Ctrl + C in the terminal to stop the Flask application.
 
 ## Additional Information
-- The Flask application code can be found in app.py.
+- The Flask application code can be found in main.py.
 - The machine learning model code is imported from the model.py file
 - Modify the code as needed to fit your specific machine learning model and requirements.
 - Ensure that the required modules are correctly installed to avoid any dependency issues.
