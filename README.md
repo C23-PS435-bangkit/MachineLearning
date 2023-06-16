@@ -12,7 +12,7 @@ This repository provides a Flask application for testing a machine learning mode
 
 1. Clone the repository:
     ```
-    git clone https://github.com/your-username/your-repo.git
+    git clone https://github.com/C23-PS435-bangkit/MachineLearning.git
     cd your-repo
     ````
 2. Since the only working model is in flask, change the working directory into `using_flask`:
